@@ -1,0 +1,105 @@
+GEO_CODE,Region,Value,Species,Country
+CPT,City of Cape Town,0.4863,normal,Youth Female
+WC012,Cederberg,0.1878,normal,Youth Female
+WC013,Bergrivier,0.1362,normal,Youth Female
+WC015,Swartland,0.2962,normal,Youth Female
+WC022,Witzenberg,0.1745,normal,Youth Female
+WC023,Drakenstein,0.3743,normal,Youth Female
+WC025,Breede Valley,0.288,normal,Youth Female
+WC026,Langeberg,0.2452,normal,Youth Female
+WC031,Theewaterskloof,0.3338,normal,Youth Female
+WC032,Overstrand,0.4577,normal,Youth Female
+WC034,Swellendam,0.2978,normal,Youth Female
+WC041,Kannaland,0.375,normal,Youth Female
+WC042,Hessequa,0.3463,normal,Youth Female
+WC043,Mossel Bay,0.4407,normal,Youth Female
+WC044,George,0.4381,normal,Youth Female
+WC045,Oudtshoorn,0.5435,normal,Youth Female
+WC047,Bitou,0.6226,normal,Youth Female
+WC048,Knysna,0.5206,normal,Youth Female
+WC051,Laingsburg,0.3619,normal,Youth Female
+WC052,Prince Albert,0.4734,normal,Youth Female
+WC053,Beaufort West,0.5216,normal,Youth Female
+ZA,South Africa,0.5784,average,Youth Female
+CPT,City of Cape Town,0.197,normal,All Female
+WC012,Cederberg,0.0915,normal,All Female
+WC013,Bergrivier,0.0584,normal,All Female
+WC015,Swartland,0.1117,normal,All Female
+WC022,Witzenberg,0.0765,normal,All Female
+WC023,Drakenstein,0.1528,normal,All Female
+WC025,Breede Valley,0.1103,normal,All Female
+WC026,Langeberg,0.0974,normal,All Female
+WC031,Theewaterskloof,0.1389,normal,All Female
+WC032,Overstrand,0.1929,normal,All Female
+WC034,Swellendam,0.1031,normal,All Female
+WC041,Kannaland,0.1226,normal,All Female
+WC042,Hessequa,0.1478,normal,All Female
+WC043,Mossel Bay,0.1814,normal,All Female
+WC044,George,0.1814,normal,All Female
+WC045,Oudtshoorn,0.1948,normal,All Female
+WC047,Bitou,0.2938,normal,All Female
+WC048,Knysna,0.2129,normal,All Female
+WC051,Laingsburg,0.1998,normal,All Female
+WC052,Prince Albert,0.1822,normal,All Female
+WC053,Beaufort West,0.2233,normal,All Female
+ZA,South Africa,0.2392,average,All Female
+CPT,City of Cape Town,0.2037,normal,All Male
+WC012,Cederberg,0.0959,normal,All Male
+WC013,Bergrivier,0.0649,normal,All Male
+WC015,Swartland,0.1104,normal,All Male
+WC022,Witzenberg,0.073,normal,All Male
+WC023,Drakenstein,0.1562,normal,All Male
+WC025,Breede Valley,0.1126,normal,All Male
+WC026,Langeberg,0.0942,normal,All Male
+WC031,Theewaterskloof,0.1383,normal,All Male
+WC032,Overstrand,0.2106,normal,All Male
+WC034,Swellendam,0.0934,normal,All Male
+WC041,Kannaland,0.1204,normal,All Male
+WC042,Hessequa,0.1345,normal,All Male
+WC043,Mossel Bay,0.185,normal,All Male
+WC044,George,0.178,normal,All Male
+WC045,Oudtshoorn,0.1901,normal,All Male
+WC047,Bitou,0.2673,normal,All Male
+WC048,Knysna,0.2052,normal,All Male
+WC051,Laingsburg,0.1598,normal,All Male
+WC052,Prince Albert,0.1857,normal,All Male
+WC053,Beaufort West,0.2237,normal,All Male
+ZA,South Africa,0.2263,average,All Male
+CPT,City of Cape Town,0.4376,normal,Youth Male
+WC012,Cederberg,0.1865,normal,Youth Male
+WC013,Bergrivier,0.1233,normal,Youth Male
+WC015,Swartland,0.2161,normal,Youth Male
+WC022,Witzenberg,0.1195,normal,Youth Male
+WC023,Drakenstein,0.3216,normal,Youth Male
+WC025,Breede Valley,0.2642,normal,Youth Male
+WC026,Langeberg,0.1713,normal,Youth Male
+WC031,Theewaterskloof,0.2353,normal,Youth Male
+WC032,Overstrand,0.4162,normal,Youth Male
+WC034,Swellendam,0.1773,normal,Youth Male
+WC041,Kannaland,0.2249,normal,Youth Male
+WC042,Hessequa,0.2226,normal,Youth Male
+WC043,Mossel Bay,0.3773,normal,Youth Male
+WC044,George,0.3636,normal,Youth Male
+WC045,Oudtshoorn,0.4221,normal,Youth Male
+WC047,Bitou,0.473,normal,Youth Male
+WC048,Knysna,0.4122,normal,Youth Male
+WC051,Laingsburg,0.1988,normal,Youth Male
+WC052,Prince Albert,0.2644,normal,Youth Male
+WC053,Beaufort West,0.4028,normal,Youth Male
+ZA,South Africa,0.4741,average,Youth Male
+WC011,Matzikama,0.3127,WC011,Youth Female
+WC014,Saldanha Bay,0.4282,WC014,Youth Female
+WC024,Stellenbosch,0.327,WC024,Youth Female
+WC033,Cape Agulhas,0.322,WC033,Youth Female
+WC011,Matzikama,0.1368,WC011,All Female
+WC014,Saldanha Bay,0.1907,WC014,All Female
+WC024,Stellenbosch,0.1299,WC024,All Female
+WC033,Cape Agulhas,0.1489,WC033,All Female
+WC011,Matzikama,0.1313,WC011,All Male
+WC014,Saldanha Bay,0.2127,WC014,All Male
+WC024,Stellenbosch,0.1303,WC024,All Male
+WC033,Cape Agulhas,0.1558,WC033,All Male
+WC011,Matzikama,0.2335,WC011,Youth Male
+WC014,Saldanha Bay,0.412,WC014,Youth Male
+WC024,Stellenbosch,0.2959,WC024,Youth Male
+WC033,Cape Agulhas,0.2369,WC033,Youth Male

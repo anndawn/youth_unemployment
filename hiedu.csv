@@ -1,0 +1,51 @@
+,GEO_CODE,Region,Country,Value,Species
+47,WC052,Prince Albert,At least Matric Education Male,0.45,normal
+40,WC042,Hessequa,At least Matric Education Male,0.3369,normal
+22,WC052,Prince Albert,At least Matric Education Female,0.3233,normal
+23,WC053,Beaufort West,At least Matric Education Female,0.5037,normal
+48,WC053,Beaufort West,At least Matric Education Male,0.4384,normal
+1,WC012,Cederberg,At least Matric Education Female,0.3501,normal
+26,WC012,Cederberg,At least Matric Education Male,0.3634,normal
+27,WC013,Bergrivier,At least Matric Education Male,0.2828,normal
+43,WC045,Oudtshoorn,At least Matric Education Male,0.4752,normal
+29,WC015,Swartland,At least Matric Education Male,0.4765,normal
+30,WC022,Witzenberg,At least Matric Education Male,0.47700000000000004,normal
+31,WC023,Drakenstein,At least Matric Education Male,0.5931,normal
+42,WC044,George,At least Matric Education Male,0.5295,normal
+33,WC025,Breede Valley,At least Matric Education Male,0.49200000000000005,normal
+34,WC026,Langeberg,At least Matric Education Male,0.3626,normal
+35,WC031,Theewaterskloof,At least Matric Education Male,0.415,normal
+36,WC032,Overstrand,At least Matric Education Male,0.3677,normal
+41,WC043,Mossel Bay,At least Matric Education Male,0.506,normal
+38,WC034,Swellendam,At least Matric Education Male,0.602,normal
+21,WC051,Laingsburg,At least Matric Education Female,0.3305,normal
+20,WC048,Knysna,At least Matric Education Female,0.4976,normal
+19,WC047,Bitou,At least Matric Education Female,0.5404,normal
+9,WC026,Langeberg,At least Matric Education Female,0.4552,normal
+2,WC013,Bergrivier,At least Matric Education Female,0.48200000000000004,normal
+46,WC051,Laingsburg,At least Matric Education Male,0.4485,normal
+4,WC015,Swartland,At least Matric Education Female,0.4099,normal
+5,WC022,Witzenberg,At least Matric Education Female,0.474,normal
+6,WC023,Drakenstein,At least Matric Education Female,0.6471,normal
+45,WC048,Knysna,At least Matric Education Male,0.4016,normal
+8,WC025,Breede Valley,At least Matric Education Female,0.5668,normal
+10,WC031,Theewaterskloof,At least Matric Education Female,0.5101,normal
+18,WC045,Oudtshoorn,At least Matric Education Female,0.5593,normal
+11,WC032,Overstrand,At least Matric Education Female,0.5306,normal
+44,WC047,Bitou,At least Matric Education Male,0.4526,normal
+13,WC034,Swellendam,At least Matric Education Female,0.5828,normal
+14,WC041,Kannaland,At least Matric Education Female,0.32,normal
+15,WC042,Hessequa,At least Matric Education Female,0.4118,normal
+16,WC043,Mossel Bay,At least Matric Education Female,0.5368,normal
+17,WC044,George,At least Matric Education Female,0.6111,normal
+39,WC041,Kannaland,At least Matric Education Male,0.4376,normal
+49,ZA,South Africa,At least Matric Education Male,0.4745,average
+24,ZA,South Africa,At least Matric Education Female,0.5449,average
+37,WC033,Cape Agulhas,At least Matric Education Male,0.4456,WC033
+12,WC033,Cape Agulhas,At least Matric Education Female,0.4963,WC033
+32,WC024,Stellenbosch,At least Matric Education Male,0.506,WC024
+7,WC024,Stellenbosch,At least Matric Education Female,0.5216,WC024
+28,WC014,Saldanha Bay,At least Matric Education Male,0.4048,WC014
+3,WC014,Saldanha Bay,At least Matric Education Female,0.4313,WC014
+0,WC011,Matzikama,At least Matric Education Female,0.4787,WC011
+25,WC011,Matzikama,At least Matric Education Male,0.3609,WC011

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{margin: 0;padding: 0;}
+    h4{width: 600px;text-align: center;margin-top: 15px;}
+    .red1,.red2,.red3{height:250px;width:600px}
+    .grid {
+    stroke: rgba(190, 187, 182, 0.527);
+    stroke-width: 0.5px;
+    }
+    .selectedgrid{
+        stroke-width: 4px;
+    }
+    /* .circle {
+        opacity: 0.5
+    } */
+    .tooltip {
+        position: absolute;
+        font-size: 14px;
+        font-weight:500;
+        width: 120px;
+        height: 50px;
+        pointer-events: none;
+        background-color: white;
+    }
+</style>
+<body>
+    <h4>Unemployment Rate by Gender and Age Group</h4>
+    <div class="red1"></div>
+    <h4>Youth NEET status by Gender</h4>
+    <div class="red2"></div>
+    <h4>Percentage of Youth(20-24) with at least Matric Pass</h4>
+    <div class="red3"></div>
+
+</body>
+</html>
+<script src="jquery-3.1.1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js'></script>
+<script>
+    var margin = {top: 20, right: 120, bottom: 30, left: 120};
+
+function drawdots(arr,divname,exname,max,txt) {
+    var width = $("."+divname).width() - margin.left - margin.right,
+     height = $("."+divname).height() - margin.top - margin.bottom;
+    var svg = d3.select("."+divname)
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom + 10)
+        .append("g")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+    var tooltip = d3.select("." + divname).append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+    //Read the data
+    d3.csv(exname, function (data) {
+        var entries = d3.nest()
+            .key(function (d) { return d.Country; })
+            .entries(data);
+            function wrap(text, width) {
+                text.each(function() {
+                    var text = d3.select(this),
+                        words = text.text().split(/\s+/).reverse(),
+                        word,
+                        line = [],
+                        lineNumber = 0,
+                        lineHeight = 1.1, // ems
+                        y = text.attr("y"),
+                        dy = parseFloat(text.attr("dy")),
+                        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+                    while (word = words.pop()) {
+                    line.push(word);
+                    tspan.text(line.join(" "));
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop();
+                        tspan.text(line.join(" "));
+                        line = [word];
+                        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                    }
+                    }
+                });
+                }
+
+        // Add X axis
+        var x = d3.scaleLinear()
+            .domain([0, max])
+            .range([0, width]);
+        svg.append("g").attr('class','x-axis')
+            .attr("transform", "translate(0," + (height) + ")")
+            .call(d3.axisBottom(x).tickFormat(d=>d3.format(".0f")(d*100)+'%'));
+        
+        d3.selectAll('.x-axis').append('text')
+          .attr('x', width)
+          .attr('y', 0)
+          .attr('text-anchor','start')
+          .attr('fill','#000')
+          .text("Percentage")
+          .attr('font-size','0.5rem')
+
+        // Add Y axis
+        // var y = d3.scaleOrdinal()
+        //     .domain(arr)
+        //     .range([20, 50, height-50, height-20,height]);
+        var y = d3.scalePoint()
+            .domain(arr)
+            .range([20, height]);
+
+        svg.append("g").attr('class','y-axis')
+            .call(d3.axisLeft(y).tickSize(0))
+            .selectAll(".tick text")
+            .call(wrap, 85);
+
+        d3.selectAll('.y-axis').append('text')
+          .attr('x', 0)
+          .attr('y', 0)
+          .attr('dy','-0.5rem')
+          .attr('text-anchor','end')
+          .attr('fill','#000')
+          .text("Population Group")
+          .attr('font-size','0.5rem')
+
+        // Color scale: give me a specie name, I return a color
+        var color = d3.scaleOrdinal()
+            .domain(["normal", "average", "WC011",'WC024','WC014','WC033'])
+            .range(["#eb5e57", "#cccccc","#b7d04e", "#feb729","#9C95DC","#9acac9"]);
+
+        var opacity_circle = d3.scaleOrdinal()
+            .domain(["normal","average", "WC011","WC024","WC014","WC033"])
+            .range([0.25, 0.8, 0.8, 0.8, 0.8, 0.8]);
+
+        var tipMouseover = function (d) {
+            var colors = color(d.Species);
+            var html = d.Country + "<br />" +
+                "<span style='color:" + colors + ";'>" + d.Region + "</span><br />" +
+                "<b>" + Math.round(d.Value*1000)/10 + "%</b>";
+
+            tooltip.html(html)
+                .style("left", (d3.event.pageX + 15) + "px")
+                .style("top", (d3.event.pageY - 28) + "px")
+                .transition()
+                .duration(200) // ms
+                .style("opacity", .9) // started as 0!
+
+        };
+        // tooltip mouseout event handler
+        var tipMouseout = function (d) {
+            tooltip.transition()
+                .duration(300) // ms
+                .style("opacity", 0); // don't care about position!
+        };
+
+        svg.append("g")
+           .attr("class","gridlines")
+            .selectAll("line")
+            .data(entries)
+            .enter()
+            .append("line")
+            .attr("x1", 0)
+            .attr("x2", width)
+            .attr("y1", (d, i) => { console.log(d.key); return y(d.key) })
+            .attr("y2", (d) => y(d.key))
+            .attr("class",function (d) {
+                return d.key
+            })
+            .classed("grid",true);
+
+        // Add dots
+        svg.append('g').attr("class", "dotboard")
+        var circles = d3.select("."+divname).select(".dotboard").selectAll("circle")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("class",function (d) {
+                return d.Country
+            })
+            .classed("circle",true)
+            .attr("cx", function (d) { return x(d.Value); })
+            .attr("cy", function (d) { return y(d.Country); })
+            .attr("r", 6)
+            .style("fill", function (d) { return color(d.Species) })
+            .attr("opacity", function (d) { return opacity_circle(d.Species) })
+            .on("mouseover", tipMouseover)
+            .on("mouseout", tipMouseout);
+
+        // d3.select("."+divname).select("svg").append("text").text(txt)
+        //     .attr("class", "title").attr("transform", "translate(" + (width+70) + ",10) rotate(90) ")
+
+        var ordinal = d3.scaleOrdinal()
+                        .domain(["Other munis in WC", "National Average", "Matzikama","Stellenbosch","Saldanha Bay","Cape Agulhas"])
+                        .range(["#eb5e57", "#cccccc","#b7d04e", "#feb729","#9C95DC","#9acac9"]);
+
+
+        svg.append("g")
+            .attr("class", "legendOrdinal")
+            .attr("transform", "translate("+width+",20)");
+
+        var legendOrdinal = d3.legendColor()
+                            // .orient("horizontal")
+                            .shape("path", d3.symbol().type(d3.symbolCircle)())
+                            .shapePadding(2)
+                            //use cellFilter to hide the "e" cell
+                            .cellFilter(function(d){ return d.label !== "e" })
+                            .cells(5)
+                            // .labelWrap(120)
+                            .scale(ordinal);
+        svg.select(".legendOrdinal").call(legendOrdinal);    
+        svg.selectAll('.label').style('font-size','0.5rem')
+
+        })
+    }
+var arr1 = ["Youth Female","Youth Male","All Female","All Male",""]
+var arr2 =['Female NEET', 'Male NEET', 'Female school/postschool','Male school/postschool', 'Female Employed', 'Male Employed',""]
+var arr3= ['At least Matric Education Female','At least Matric Education Male',""]
+drawdots(arr1,"red1","unemployment.csv",0.7,"")
+drawdots(arr2,"red2","neet.csv",0.6,"")
+drawdots(arr3,"red3","hiedu.csv",0.8,"")
+
+
+</script>
